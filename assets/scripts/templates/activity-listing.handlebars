@@ -1,0 +1,41 @@
+{{#each activities as |activity|}}
+  {{log activity}}
+  <section data-id="{{activity.id}}">
+    <h6>Sport:</h6>
+    <h3>
+      {{limit activity.sport 15}}
+    </h2>
+    <h6>User:</h6>
+    <p>
+      {{#if activity.user_id}}
+        {{activity.user_id}}
+      {{else}}
+        Some text.
+      {{/if}}
+    </p>
+    <button class='btn btn-danger' data-id="{{book.id}}">Delete</button>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}
+
+{{#each books as |book|}}
+  {{log book}}
+  <section data-id="{{book.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{limit book.title 15}}
+    </h2>
+    <h6>Author:</h6>
+    <p>
+      {{#if book.author}}
+        {{book.author}}
+      {{else}}
+        No author provided.
+      {{/if}}
+    </p>
+    <button class='btn btn-danger' data-id="{{book.id}}">Delete</button>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}
