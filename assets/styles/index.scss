@@ -1,1 +1,101 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Tangerine');
+
+// .tictactoe {
+//   display: grid;
+//   grid-template-rows: 150px 150px 150px;
+//   grid-template-columns: 150px 150px 150px;
+// }
+
+// for some css stylings
+body {
+  background-image: url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=background-blur-clean-531880.jpg&fm=jpg");
+
+}
+
+h2 {
+  font-family: 'Tangerine', serif;
+  font-size: 70px;
+  text-shadow: 4px 4px 4px #aaa;
+  text-align: center;
+}
+
+
+.cell {
+  background: #FFA8D3;
+  border: 5px solid #555;
+  color: #008080;
+  min-height: 100px;
+  max-height: 100px;
+  width: 32%;
+  font-family: 'Tangerine', serif;
+  font-size: 80px;
+  text-align: center;
+
+}
+
+#game-board {
+  height: 50%;
+  width: 50%;
+  display: none;
+}
+
+#error-message {
+  background: #FFA8D3;
+  color: #FF0000;
+}
+
+.hide {
+  display: none;
+}
+.row {
+width: 100%;
+
+}
+.center {
+  margin: auto;
+  width: 60%;
+
+  // padding: 5px;
+}
+
+#game-create {
+  text-align: center;
+  margin: auto;
+  background-color: #FFA8D3;
+}
+
+
+
+
+#game-status {
+  background-color: #EE82EE;
+}
+
+#win-status {
+  background-color: #EE82EE;
+}
+
+#finished-games {
+  background-color: #EE82EE;
+}
+
+#get-games {
+  color: #FF4848;
+}
+
+#create-game-message {
+  background-color: #90EE90;
+  height: 50px;
+  width: 400px;
+  text-align: center;
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+input[type="submit"] {
+  background-color: #90EE90;
+  border-radius: 12px;
+}

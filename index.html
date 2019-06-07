@@ -12,6 +12,50 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+
+  <h2>Welcome to Anna's Sports Calendar</h2>
+  <p id="game-status"></p>
+  <p id="draw"></p>
+<div class="center">
+  <form id="game-create" class = "hide">
+    <input type="submit" value="Start a new game!">
+  </form>
+  <form id="get-games" class = "hide">
+       <input type="submit" value="Get Number of Games" />
+     </form>
+  <p id="finished-games"></p>
+    <p id="win-status" class="user-feedback"></p>
+</div>
+  <div id="game-display"></div>
+  <p id="error-message" class="user-feedback"></p>
+
+  <p id="create-game-message" class="user-feedback">USER MESSAGING</p>
+  <br>
+  <!-- <form id="get-games">
+    <input id="get-games" type = "button" value="show all games">
+  </form> -->
+
+
+<div class = "center">
+  <form id="sign-up">
+    <input name="credentials[email]" type="text" placeholder="email">
+    <input name="credentials[password]" type="password" placeholder="password">
+    <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
+    <input type="submit" value="Sign Up" >
+  </form>
+  <form id="sign-in">
+    <input name="credentials[email]" type="password" placeholder="email">
+    <input name="credentials[password]" type="password" placeholder="password">
+    <input type="submit" value="Sign In">
+  </form>
+  <form id="change-password" class = "hide">
+    <input name="passwords[old]" type="password" placeholder="old password">
+    <input name="passwords[new]" type="password" placeholder="new password">
+    <input type="submit" value="Change Password">
+  </form>
+</div>
+<br>
+
+
     </body>
 </html>
