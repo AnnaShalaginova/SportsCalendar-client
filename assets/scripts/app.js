@@ -1,5 +1,10 @@
 'use strict'
 
+
+module.exports = {
+  host: 'http://localhost:4741'
+}
+
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
 
