@@ -1,17 +1,17 @@
+
 'use strict'
 
 const config = require('../config')
-const app = require('./app')
+const store = require('../store')
 
-
-const signUp = event => {
+const signUp = formData => {
   // console.log('from api signUp')
 
   return $.ajax({
-  url: config.apiUrl + '/sign-up',
-  method: 'POST',
-  data: formData
-})
+    url: config.apiUrl + '/sign-up',
+    method: 'POST',
+    data: formData
+  })
 }
 
 const signIn = formData => {

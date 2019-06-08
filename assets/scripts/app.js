@@ -1,9 +1,8 @@
 'use strict'
 
-
-module.exports = {
-  host: 'http://localhost:4741'
-}
+const actEvents = require('./activities/events')
+// const gameEvents = require('./game/events')
+// const gameLogic = require('./game')
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
@@ -12,5 +11,9 @@ module.exports = {
 // require('./example')
 
 $(() => {
-  // your JS code goes here
+  // $('#game-board').hide()
+  $('#sign-up').on('submit', actEvents.onSignUp)
+  $('#sign-in').on('submit', actEvents.onSignIn)
+  $('#change-password').on('submit', actEvents.onChangePassword)
+  $('#sign-out').on('submit', actEvents.onSignOut)
 })
