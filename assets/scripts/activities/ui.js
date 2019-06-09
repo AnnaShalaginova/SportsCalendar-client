@@ -42,6 +42,7 @@ const onSignInSuccess = responseData => {
   $('#game-create').show()
   $('#sign-out').show()
   $('#change-password').show()
+  $('#create-activity').show()
   $('#game-create').show()
   $('#create-game-message').html('You are in! Press the button above to play')
   $('form').trigger('reset')
@@ -99,8 +100,8 @@ const onSignOutFailure = () => {
 
 const getActivitiesSuccess = (data) => {
   console.log(data)
-  const showActivitiesHtml = showActivitiesTemplate({ activities: data.activities })
-  $('.content').html(showActivitiesHtml)
+  // const showActivitiesHtml = showActivitiesTemplate({ activities: data.activities })
+  // $('.content').html(showActivitiesHtml)
 }
 
 const clearActivities = () => {
