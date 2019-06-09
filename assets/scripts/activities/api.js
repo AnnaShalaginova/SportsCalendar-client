@@ -38,6 +38,17 @@ const changePassword = formData => {
     }
   })
 }
+const createActivity = function () {
+  return $.ajax({
+    url: config.apiUrl + '/activities',
+    method: 'POST',
+    data: '',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+
+  })
+}
 const signOut = () => {
   // console.log('from api signOut')
 
@@ -68,6 +79,7 @@ module.exports = {
   signUp,
   signIn,
   changePassword,
+  createActivity,
   signOut
 
 }

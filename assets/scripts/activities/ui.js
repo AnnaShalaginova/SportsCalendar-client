@@ -79,6 +79,25 @@ const onChangePasswordFailure = () => {
   $('form').trigger('reset')
 }
 
+const onCreateSuccess = function (responseData) {
+  store.game = responseData.game
+  // console.log(store.game)
+  // add success message to content
+  $('#create-game-message').html('You are in! Make your move!')
+  $('#create-game-message').addClass('success')
+
+  // use setTimeout to allow the success message to stay for 5 seconds before
+  // the message is replaced with '' and the 'success' class is removed
+  setTimeout(() => {
+    $('#create-game-message').html('')
+    $('#create-game-message').removeClass('success')
+  }, 5000)
+
+  // reset all forms
+  $('form').trigger('reset')
+  store.game.whoseturn = 'x'
+  $('#get-games').show()
+}
 const onSignOutSuccess = () => {
   $('#create-game-message').text('Signed out successfully!')
   $('#create-game-message').removeClass()
@@ -97,6 +116,7 @@ const onSignOutFailure = () => {
   $('#create-game-message').addClass('failure')
   $('form').trigger('reset')
 }
+
 
 const getActivitiesSuccess = (data) => {
   console.log(data)
