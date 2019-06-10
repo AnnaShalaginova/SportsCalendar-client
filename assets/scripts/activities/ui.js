@@ -79,8 +79,8 @@ const onChangePasswordFailure = () => {
   $('form').trigger('reset')
 }
 
-const onCreateSuccess = function (responseData) {
-  store.game = responseData.game
+const onCreateActivitySuccess = function (responseData) {
+  store.responseData = responseData
   // console.log(store.game)
   // add success message to content
   $('#create-game-message').html('You are in! Make your move!')
@@ -95,7 +95,7 @@ const onCreateSuccess = function (responseData) {
 
   // reset all forms
   $('form').trigger('reset')
-  store.game.whoseturn = 'x'
+
   $('#get-games').show()
 }
 const onSignOutSuccess = () => {
@@ -117,7 +117,6 @@ const onSignOutFailure = () => {
   $('form').trigger('reset')
 }
 
-
 const getActivitiesSuccess = (data) => {
   console.log(data)
   // const showActivitiesHtml = showActivitiesTemplate({ activities: data.activities })
@@ -137,6 +136,7 @@ module.exports = {
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
+  onCreateActivitySuccess,
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,

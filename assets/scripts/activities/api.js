@@ -38,15 +38,22 @@ const changePassword = formData => {
     }
   })
 }
-const createActivity = function () {
+const createActivity = function (sport, date, duration, location) {
+  console.log('We are creating an activity')
   return $.ajax({
     url: config.apiUrl + '/activities',
     method: 'POST',
-    data: '',
     headers: {
       Authorization: 'Token token=' + store.user.token
+    },
+    data: {
+      'activity': {
+        'sport': sport,
+        'date': 'date',
+        'duration': duration,
+        'location': location
+      }
     }
-
   })
 }
 const signOut = () => {
