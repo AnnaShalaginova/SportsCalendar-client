@@ -38,7 +38,7 @@ const changePassword = formData => {
     }
   })
 }
-const createActivity = function (sport, date, duration, location) {
+const createActivity = function (sport) {
   console.log('We are creating an activity')
   console.log(sport)
   return $.ajax({
@@ -48,12 +48,19 @@ const createActivity = function (sport, date, duration, location) {
       Authorization: 'Token token=' + store.user.token
     },
     data: {
-      'activity': {
-        'sport': sport,
-        'date': 'date',
-        'duration': duration,
-        'location': location
-      }
+
+      'activity': sport
+
+    }
+  })
+}
+const getActivities = function () {
+  return $.ajax({
+    url: config.apiUrl + '/activities',
+    method: 'GET',
+
+    headers: {
+      Authorization: 'Token token=' + store.user.token
     }
   })
 }
@@ -69,11 +76,11 @@ const signOut = () => {
   })
 }
 
-const getActivities = function () {
-  return $.ajax({
-    url: config.apiUrl + '/activities'
-  })
-}
+// const getActivities = function () {
+//   return $.ajax({
+//     url: config.apiUrl + '/activities'
+//   })
+// }
 
 const deleteActivity = function (id) {
   return $.ajax({

@@ -17,22 +17,20 @@
   <p id="game-status"></p>
   <p id="draw"></p>
 <div class="center">
-  <form id="game-create" class = "hide">
-    <input type="submit" value="Start a new game!">
-  </form>
-  <form id="get-games" class = "hide">
-       <input type="submit" value="Get Number of Games" />
+
+  <form id="get-activities" class = "hide">
+       <input type="submit" value="Get My Activities" />
      </form>
-  <p id="finished-games"></p>
+  <p id="scheduled-activities"></p>
     <p id="win-status" class="user-feedback"></p>
 </div>
   <div id="game-display"></div>
   <p id="error-message" class="user-feedback"></p>
 
-  <p id="create-game-message" class="user-feedback">USER MESSAGING</p>
+  <p id="create-activity-message" class="user-feedback">USER MESSAGING</p>
   <br>
-  <!-- <form id="get-games">
-    <input id="get-games" type = "button" value="show all games">
+  <!-- <form id="get-activities">
+    <input id="get-activities" type = "button" value="show all games">
   </form> -->
 
 
@@ -44,7 +42,7 @@
     <input type="submit" value="Sign Up" >
   </form>
   <form id="sign-in">
-    <input name="credentials[email]" type="password" placeholder="email">
+    <input name="credentials[email]" type="text" placeholder="email">
     <input name="credentials[password]" type="password" placeholder="password">
     <input type="submit" value="Sign In">
   </form>
@@ -54,10 +52,13 @@
     <input type="submit" value="Change Password">
   </form>
   <br>
+  <form id="activity-create" class = "hide">
+    <input type="submit" value="Create a new activity!">
+  </form>
   <form id="create-activity" class = "hide">
     <h2>Let's create a new activity!</h2>
-    <input name="activity[sport]" type="text" placeholder="sports activity">
-    <input name="activity[date]" type="text" placeholder="date">
+    <input name="sport" type="text" placeholder="sports activity">
+    <input name="date" type="text" placeholder="date">
     <input name="duration" type="text" placeholder="how long">
     <input name="location" type="text" placeholder="where">
     <input type="submit" value="Create Activity">

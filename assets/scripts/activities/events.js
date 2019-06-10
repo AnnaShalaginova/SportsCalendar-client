@@ -48,6 +48,13 @@ const onCreateActivity = event => {
     .catch(ui.onCreateActivityFailure)
 }
 
+const onGetActivities = function (event) {
+  event.preventDefault()
+  api.getActivities()
+    .then(ui.onGetActivitiesSuccess)
+    .catch(ui.onError)
+}
+
 const onSignOut = event => {
   event.preventDefault()
 
@@ -91,5 +98,6 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onCreateActivity,
-  onSignOut
+  onSignOut,
+  onGetActivities
 }
