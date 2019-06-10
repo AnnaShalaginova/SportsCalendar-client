@@ -40,6 +40,7 @@ const changePassword = formData => {
 }
 const createActivity = function (sport, date, duration, location) {
   console.log('We are creating an activity')
+  console.log(sport)
   return $.ajax({
     url: config.apiUrl + '/activities',
     method: 'POST',
