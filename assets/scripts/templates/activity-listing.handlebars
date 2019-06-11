@@ -3,22 +3,21 @@
   <section data-id="{{activity.id}}">
     <h6>Sport:</h6>
     <h3>
+      Sport: {{limit activity.sport 15}}
+    </h3>
+    <h3>
       {{limit activity.sport 15}}
-    </h2>
-    <h6>User:</h6>
-    <p>
-      {{#if activity.user_id}}
-        {{activity.user_id}}
-      {{else}}
-        Some text.
-      {{/if}}
-    </p>
-    <button class='btn btn-danger' data-id="{{book.id}}">Delete</button>
+    </h3>
+
+    <button class='btn btn-danger delete-activity' data-id="{{activity.id}}">Delete</button>
+    <button class='btn btn-danger' data-id="{{activity.id}}">Update</button>
     <!-- {{> partial}} -->
   </section>
 
 {{/each}}
 
+
+{{!---
 {{#each books as |book|}}
   {{log book}}
   <section data-id="{{book.id}}">
@@ -38,4 +37,4 @@
     <!-- {{> partial}} -->
   </section>
 
-{{/each}}
+{{/each}}--}}

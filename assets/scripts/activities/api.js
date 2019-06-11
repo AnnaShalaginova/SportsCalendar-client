@@ -72,10 +72,15 @@ const getActivity = (id) => {
   })
 }
 
+// const updateActivity
+
 const deleteActivity = (id) => {
   return $.ajax({
     url: config.apiUrl + '/activities/' + id,
-    method: 'DELETE'
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 

@@ -118,18 +118,34 @@ const onSignOutFailure = () => {
 }
 
 const onGetActivitiesSuccess = responseData => {
-  $('#create-activity-message').html(responseData.activities)
+  $('#create-activity-message').html('View activities below!')
   console.log(responseData.activities)
   const showActivitiesHtml = showActivitiesTemplate({ activities: responseData.activities })
   $('.content').html(showActivitiesHtml)
 }
 
-const clearActivities = () => {
-  $('.content').empty()
-}
+// const clearActivities = () => {
+//   $('.content').empty()
+// }
 
 const failure = (error) => {
   console.error(error)
+}
+
+const onDeleteActivitySuccess = function () {
+  $('#create-activity-message').html('Activity successfully deleted!')
+
+  $('#create-activity-message').addClass('success')
+
+  // use setTimeout to allow the success message to stay for 5 seconds before
+  // the message is replaced with '' and the 'success' class is removed
+  setTimeout(() => {
+    $('#create-activity-message').html('')
+    $('#create-activity-message').removeClass('success')
+  }, 5000)
+
+  // reset all forms
+  $('form').trigger('reset')
 }
 
 module.exports = {
@@ -143,6 +159,7 @@ module.exports = {
   onSignOutSuccess,
   onSignOutFailure,
   onGetActivitiesSuccess,
-  clearActivities,
+  onDeleteActivitySuccess,
+  // clearActivities,
   failure
 }
