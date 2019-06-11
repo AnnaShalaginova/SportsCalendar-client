@@ -1,5 +1,5 @@
 'use strict'
-// const showActivitiesTemplate = require('../templates/activity-listing.handlebars')
+const showActivitiesTemplate = require('../templates/activity-listing.handlebars')
 
 const store = require('../store')
 
@@ -118,8 +118,10 @@ const onSignOutFailure = () => {
 }
 
 const onGetActivitiesSuccess = responseData => {
-  $('#create-activity-message').html('hello')
-  console.log('Dachshund')
+  $('#create-activity-message').html(responseData.activities)
+  console.log(responseData.activities)
+  const showActivitiesHtml = showActivitiesTemplate({ activities: responseData.activities })
+  $('.content').html(showActivitiesHtml)
 }
 
 const clearActivities = () => {

@@ -35,12 +35,14 @@
 
 
 <div class = "center">
+<nav>
   <form id="sign-up">
     <input name="credentials[email]" type="text" placeholder="email">
     <input name="credentials[password]" type="password" placeholder="password">
     <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
     <input type="submit" value="Sign Up" >
   </form>
+  <br>
   <form id="sign-in">
     <input name="credentials[email]" type="text" placeholder="email">
     <input name="credentials[password]" type="password" placeholder="password">
@@ -62,7 +64,17 @@
     <input name="duration" type="text" placeholder="how long">
     <input name="location" type="text" placeholder="where">
     <input type="submit" value="Create Activity">
+    <br>
+    <br>
+    <div class="nav-buttons">
+        <button id="getActivitiesButton" class="btn btn-info mr-2">Get My Activities!</button>
+        <button id="DeleteActivityButton" class="btn btn-outline-info">Delete Activity!</button>
+    </div>
   </form>
+</nav>
+<main>
+  <div id="content" class="content"></div>
+</main>
 </div>
 <br>
 

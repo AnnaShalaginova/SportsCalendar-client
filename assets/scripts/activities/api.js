@@ -64,6 +64,21 @@ const getActivities = function () {
     }
   })
 }
+
+const getActivity = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/activities/' + id,
+    method: 'GET'
+  })
+}
+
+const deleteActivity = (id) => {
+  return $.ajax({
+    url: config.apiUrl + '/activities/' + id,
+    method: 'DELETE'
+  })
+}
+
 const signOut = () => {
   // console.log('from api signOut')
 
@@ -76,20 +91,9 @@ const signOut = () => {
   })
 }
 
-// const getActivities = function () {
-//   return $.ajax({
-//     url: config.apiUrl + '/activities'
-//   })
-// }
-
-const deleteActivity = function (id) {
-  return $.ajax({
-    url: config.apiUrl + '/activities/' + id,
-    method: 'DELETE'
-  })
-}
 module.exports = {
   getActivities,
+  getActivity,
   deleteActivity,
   signUp,
   signIn,

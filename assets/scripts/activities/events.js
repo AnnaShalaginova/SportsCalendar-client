@@ -55,6 +55,14 @@ const onGetActivities = function (event) {
     .catch(ui.onError)
 }
 
+const onDeleteActivity = (event) => {
+  event.preventDefault()
+  const activityId = $(event.target).closest('section').data('id')
+  api.deleteActivity(activityId)
+    .then(() => onGetActivities(event))
+    .catch(ui.failure)
+}
+
 const onSignOut = event => {
   event.preventDefault()
 
@@ -85,19 +93,18 @@ const onSignOut = event => {
 //     .catch(ui.failure)
 // }
 
-// const addHandlers = () => {
-//   $('#getActivitiesButton').on('click', onGetActivities)
-//   $('#clearActivitiesButton').on('click', onClearActivities)
-//   $('.content').on('click', 'button', onDeleteActivity)
-// }
+const addHandlers = () => {
+  $('#getActivitiesButton').on('click', onGetActivities)
+  $('.content').on('click', 'button', onDeleteActivity)
+}
 
 module.exports = {
-  // addHandlers,
-  // onDeleteActivity,
+  addHandlers,
+  onGetActivities,
+  onDeleteActivity,
   onSignUp,
   onSignIn,
   onChangePassword,
   onCreateActivity,
-  onSignOut,
-  onGetActivities
+  onSignOut
 }
