@@ -117,7 +117,7 @@ const onSignOutFailure = () => {
 }
 
 const onGetActivitiesSuccess = responseData => {
-  $('#create-activity-message').html('You can now view activities!')
+  $('#create-activity-message').html('Success!')
   console.log(responseData.activities)
   const showActivitiesHtml = showActivitiesTemplate({ activities: responseData.activities })
   $('.content').html(showActivitiesHtml)
@@ -143,7 +143,7 @@ const onUpdateActivitySuccess = responseData => {
 }
 
 const onDeleteActivitySuccess = function () {
-  $('#create-activity-message').html('Activity successfully deleted!')
+  $('#create-activity-message').html('Success!')
 
   $('#create-activity-message').addClass('success')
   setTimeout(() => {
