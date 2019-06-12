@@ -73,8 +73,9 @@ const getActivity = (id) => {
 }
 
 const updateActivity = (id, formData) => {
+  console.log(id)
   return $.ajax({
-    url: config.apiUrl + '/activities/' + id,
+    url: config.apiUrl + `/activities/${id}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

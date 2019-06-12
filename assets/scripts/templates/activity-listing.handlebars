@@ -11,11 +11,12 @@
 
     <button class='btn btn-danger delete-activity' data-id="{{activity.id}}">Delete</button>
     <div class='update-activity'>
-    <button class='btn btn-danger' data-id="{{activity.id}}">Update</button>
-    <div class='update-sport'>Activity Id: {{activity.id}}</div>
+    <button class='btn btn-danger update-activity' data-id="{{activity.id}}">Update</button>
 
-    <form id="update-activity-form" class="hide">
+
+    <form class="hide update-activity-form">
       <h2>Make an update!</h2>
+      <div class='update-sport'>Activity Id: {{activity.id}}</div>
       <input name='activity[sport]' value="{{activity.sport}}" type="text" placeholder="sports activity">
       <input name='activity[date]' value="{{activity.date}}" type="text" placeholder="date">
       <input name="activity[duration]" value="{{activity.duration}}" type="text" placeholder="how long">

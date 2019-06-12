@@ -122,6 +122,7 @@ const onGetActivitiesSuccess = responseData => {
   console.log(responseData.activities)
   const showActivitiesHtml = showActivitiesTemplate({ activities: responseData.activities })
   $('.content').html(showActivitiesHtml)
+  $('#update-activity-form').removeClass('hide')
 }
 
 // const clearActivities = () => {

@@ -1,6 +1,7 @@
 'use strict'
 
 const actEvents = require('./activities/events')
+
 // const gameEvents = require('./game/events')
 // const gameLogic = require('./game')
 
@@ -18,5 +19,6 @@ $(() => {
   $('#create-activity').on('submit', actEvents.onCreateActivity)
   $('#sign-out').on('submit', actEvents.onSignOut)
   $('#get-activities').on('submit', actEvents.onGetActivities)
+
   actEvents.addHandlers()
 })

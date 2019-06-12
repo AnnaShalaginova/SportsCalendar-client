@@ -56,10 +56,14 @@ const onGetActivities = function (event) {
 }
 
 const onUpdateActivity = function (event) {
+  const id = $(event.target).closest('section').data('id')
+
   event.preventDefault()
   const formData = getFormFields(event.target)
-  api.onUpdateActivity(formData)
-    .then(ui.onUpdateActivitySuccess)
+  api.updateActivity(id, formData)
+    .then(function (responseData) {
+      onGetActivities(event)
+    })
     .catch(ui.onError)
 }
 // const onDeleteActivity = (event) => {
@@ -112,7 +116,10 @@ const onSignOut = event => {
 const addHandlers = () => {
   $('#getActivitiesButton').on('click', onGetActivities)
   $('#content').on('click', '.delete-activity', onDeleteActivity)
-  $('#content').on('click', '.update-activity', onUpdateActivity)
+  $('#content').on('click', '.update-activity', function (event) {
+    $(event.target).closest('section').find('.update-activity-form').show()
+  })
+  $('#content').on('submit', '.update-activity-form', onUpdateActivity)
 }
 
 // const dbHandlers = () => {
