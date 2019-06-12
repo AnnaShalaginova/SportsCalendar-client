@@ -132,6 +132,12 @@ const failure = (error) => {
   console.error(error)
 }
 
+const onUpdateActivitySuccess = responseData => {
+  const showActivitiesHtml = showActivitiesTemplate({ activities: responseData.activities })
+  $('#create-activity-message').text('Activity has been updated!')
+  $('.content').html(showActivitiesHtml)
+}
+
 const onDeleteActivitySuccess = function () {
   $('#create-activity-message').html('Activity successfully deleted!')
 
@@ -160,6 +166,7 @@ module.exports = {
   onSignOutFailure,
   onGetActivitiesSuccess,
   onDeleteActivitySuccess,
+  onUpdateActivitySuccess,
   // clearActivities,
   failure
 }

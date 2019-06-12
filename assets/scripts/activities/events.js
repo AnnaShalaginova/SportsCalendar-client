@@ -55,6 +55,13 @@ const onGetActivities = function (event) {
     .catch(ui.onError)
 }
 
+const onUpdateActivity = function (event) {
+  event.preventDefault()
+  const formData = getFormFields(event.target)
+  api.onUpdateActivity(formData)
+    .then(ui.onUpdateActivitySuccess)
+    .catch(ui.onError)
+}
 // const onDeleteActivity = (event) => {
 //   event.preventDefault()
 //   const activityId = $(event.target).closest('section').data('id')
@@ -105,11 +112,22 @@ const onSignOut = event => {
 const addHandlers = () => {
   $('#getActivitiesButton').on('click', onGetActivities)
   $('#content').on('click', '.delete-activity', onDeleteActivity)
+  $('#content').on('click', '.update-activity', onUpdateActivity)
 }
+
+// const dbHandlers = () => {
+//   $('#getGames').on('click', onGetGames)
+//   $('#createGame').on('submit', onCreateGame)
+//   $('.btnupdate').on('click', onShowUpdateGame)
+//   $('.content').on('click', '.btnupdate', onShowUpdateGame)
+//   $('.content').on('click', '.delete-game', onDeleteGame)
+//   $('.content').on('submit', '#updateGame', onUpdateGame)
+// }
 
 module.exports = {
   addHandlers,
   onGetActivities,
+  onUpdateActivity,
   onDeleteActivity,
   onSignUp,
   onSignIn,

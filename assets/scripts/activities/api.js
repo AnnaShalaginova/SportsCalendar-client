@@ -72,7 +72,16 @@ const getActivity = (id) => {
   })
 }
 
-// const updateActivity
+const updateActivity = (id, formData) => {
+  return $.ajax({
+    url: config.apiUrl + '/activities/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: formData
+  })
+}
 
 const deleteActivity = (id) => {
   return $.ajax({
@@ -104,6 +113,7 @@ module.exports = {
   signIn,
   changePassword,
   createActivity,
+  updateActivity,
   signOut
 
 }

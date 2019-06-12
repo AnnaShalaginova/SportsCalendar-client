@@ -10,11 +10,24 @@
     </h3>
 
     <button class='btn btn-danger delete-activity' data-id="{{activity.id}}">Delete</button>
+    <div class='update-activity'>
     <button class='btn btn-danger' data-id="{{activity.id}}">Update</button>
+    <div class='update-sport'>Activity Id: {{activity.id}}</div>
+
+    <form id="update-activity-form" class="hide">
+      <h2>Make an update!</h2>
+      <input name='activity[sport]' value="{{activity.sport}}" type="text" placeholder="sports activity">
+      <input name='activity[date]' value="{{activity.date}}" type="text" placeholder="date">
+      <input name="activity[duration]" value="{{activity.duration}}" type="text" placeholder="how long">
+      <input name="activity[location]" value="{{activity.location}}"  type="text" placeholder="where">
+      <input type="submit" value="Update Activity">
+    </form>
+  </div>
     <!-- {{> partial}} -->
   </section>
 
 {{/each}}
+
 
 
 {{!---
