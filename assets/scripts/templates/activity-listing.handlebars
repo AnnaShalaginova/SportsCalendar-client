@@ -1,13 +1,10 @@
 {{#each activities as |activity|}}
   {{log activity}}
   <section data-id="{{activity.id}}">
-    <h6>Sport:</h6>
-    <h3>
-      Sport: {{limit activity.sport 15}}
-    </h3>
-    <h3>
-      {{limit activity.sport 15}}
-    </h3>
+
+      <h3>Sport: {{limit activity.sport 15}}</h3>
+      <h3>Date: {{limit activity.date 15}}</h3>
+      <h3>Location: {{limit activity.location 15}}</h3>
 
     <button class='btn btn-danger delete-activity' data-id="{{activity.id}}">Delete</button>
     <div class='update-activity'>

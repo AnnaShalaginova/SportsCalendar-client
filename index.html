@@ -14,26 +14,17 @@
     <body>
 
   <h2>Welcome to Anna's Sports Calendar</h2>
-  <p id="game-status"></p>
-  <p id="draw"></p>
+  <!-- <p id="game-status"></p>
+  <p id="draw"></p> -->
 <div class="center">
 
   <!-- <form id="get-activities" class = "hide">
        <input type="submit" value="Get My Activities" />
      </form> -->
-  <p id="scheduled-activities"></p>
+  <!-- <p id="scheduled-activities"></p>
     <p id="win-status" class="user-feedback"></p>
 </div>
-  <div id="game-display"></div>
-  <p id="error-message" class="user-feedback"></p>
-
-  <p id="create-activity-message" class="user-feedback">USER MESSAGING</p>
-  <br>
-  <!-- <form id="get-activities">
-    <input id="get-activities" type = "button" value="show all games">
-  </form> -->
-
-
+  <div id="game-display"></div> -->
 <div class = "center">
 <nav>
   <form id="sign-up">
@@ -51,18 +42,23 @@
   <form id="change-password" class = "hide">
     <input name="passwords[old]" type="password" placeholder="old password">
     <input name="passwords[new]" type="password" placeholder="new password">
+    <br>
+    <br>
     <input type="submit" value="Change Password">
   </form>
   <br>
-  <form id="activity-create" class = "hide">
+
+  <!-- <form id="activity-create" class = "hide">
     <input type="submit" value="Create a new activity!">
-  </form>
+  </form> -->
   <form id="create-activity" class = "hide">
     <h2>Let's create a new activity!</h2>
     <input name="sport" type="text" placeholder="sports activity">
     <input name="date" type="text" placeholder="date">
     <input name="duration" type="text" placeholder="how long">
     <input name="location" type="text" placeholder="where">
+    <br>
+    <br>
     <input type="submit" value="Create Activity">
 
     <br>
@@ -70,7 +66,7 @@
     <div class="nav-buttons">
         <button id="getActivitiesButton" class="btn btn-info mr-2">Get My Activities!</button>
 
-        <button id="updateActivityButton" class="btn btn-outline-info">Delete Activity!</button>
+        <!-- <button id="updateActivityButton" class="btn btn-outline-info">Delete Activity!</button> -->
     </div>
   </form>
 </nav>
@@ -78,6 +74,9 @@
   <div id="content" class="content"></div>
 </main>
 </div>
+<p id="error-message" class="user-feedback"></p>
+
+<p id="create-activity-message" class="user-feedback">STAY TUNED FOR USER MESSAGES</p>
 <br>
 
 

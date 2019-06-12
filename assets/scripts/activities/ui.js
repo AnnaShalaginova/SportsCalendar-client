@@ -8,10 +8,9 @@ const onSignUpSuccess = responseData => {
   $('#create-activity-message').text('Signed up successfully!')
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('success')
-  $('#create-activity-message').html('Sign Up Successful!')
   $('#sign-up').hide()
   $('#sign-in').show()
-  $('#create-activity-message').html('Please sign in to play.')
+  $('#create-activity-message').html('Please sign in to create an activity.')
   setTimeout(() => {
     $('#create-activity-message').html('')
     $('#create-activity-message').removeClass('success')
@@ -24,7 +23,7 @@ const onSignUpSuccess = responseData => {
 
 const onSignUpFailure = responseData => {
   // console.log('failure', responseData)
-  $('#create-activity-message').text('Sign up failed :(((')
+  $('#create-activity-message').text('Sign up was not successful. Please try again.')
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('failure')
   $('form').trigger('reset')
@@ -44,7 +43,7 @@ const onSignInSuccess = responseData => {
   $('#change-password').show()
   $('#create-activity').show()
   $('#activity-create').show()
-  $('#create-activity-message').html('You are in! Next step - create some sports activities!')
+  $('#create-activity-message').html('You are in! Create a new activity!')
   $('form').trigger('reset')
   setTimeout(() => {
     $('#create-activity-message').html('')
@@ -58,14 +57,14 @@ const onSignInSuccess = responseData => {
 
 const onSignInFailure = responseData => {
   // console.log('failure', responseData)
-  $('#create-activity-message').text('Sign in failed :(((')
+  $('#create-activity-message').text('Sign in failed. Please check your password and email.')
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('failure')
   $('form').trigger('reset')
 }
 
 const onChangePasswordSuccess = () => {
-  $('#create-activity-message').html('Password Changed!')
+  $('#create-activity-message').html('Password Changed Successfully!')
   $('#change-password').hide()
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('success')
@@ -73,7 +72,7 @@ const onChangePasswordSuccess = () => {
 }
 
 const onChangePasswordFailure = () => {
-  $('#create-activity-message').text('Password change failed!')
+  $('#create-activity-message').text('Password change failed! Please try again.')
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('failure')
   $('form').trigger('reset')
@@ -83,7 +82,7 @@ const onCreateActivitySuccess = function (responseData) {
   store.responseData = responseData
   // console.log(store.game)
   // add success message to content
-  $('#create-activity-message').html('Sports Activity Has Been Created!')
+  $('#create-activity-message').html('Sports activity has been created!')
   $('#create-activity-message').addClass('success')
 
   // use setTimeout to allow the success message to stay for 5 seconds before
@@ -111,18 +110,22 @@ const onSignOutSuccess = () => {
 }
 
 const onSignOutFailure = () => {
-  $('#create-activity-message').text('Sign out failed :(((')
+  $('#create-activity-message').text('Try signing out again!')
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('failure')
   $('form').trigger('reset')
 }
 
 const onGetActivitiesSuccess = responseData => {
-  $('#create-activity-message').html('View activities below!')
+  $('#create-activity-message').html('You can now view activities!')
   console.log(responseData.activities)
   const showActivitiesHtml = showActivitiesTemplate({ activities: responseData.activities })
   $('.content').html(showActivitiesHtml)
   $('#update-activity-form').removeClass('hide')
+  setTimeout(() => {
+    $('#create-activity-message').html('')
+    $('#create-activity-message').removeClass('success')
+  }, 5000)
 }
 
 // const clearActivities = () => {
@@ -143,9 +146,6 @@ const onDeleteActivitySuccess = function () {
   $('#create-activity-message').html('Activity successfully deleted!')
 
   $('#create-activity-message').addClass('success')
-
-  // use setTimeout to allow the success message to stay for 5 seconds before
-  // the message is replaced with '' and the 'success' class is removed
   setTimeout(() => {
     $('#create-activity-message').html('')
     $('#create-activity-message').removeClass('success')
