@@ -39,8 +39,8 @@ const changePassword = formData => {
   })
 }
 const createActivity = function (sport) {
-  console.log('We are creating an activity')
-  console.log(sport)
+  // console.log('We are creating an activity')
+  // console.log(sport)
   return $.ajax({
     url: config.apiUrl + '/activities',
     method: 'POST',
@@ -73,7 +73,7 @@ const getActivity = (id) => {
 }
 
 const updateActivity = (id, formData) => {
-  console.log(id)
+  // console.log(id)
   return $.ajax({
     url: config.apiUrl + `/activities/${id}`,
     method: 'PATCH',

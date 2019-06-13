@@ -4,7 +4,7 @@ const showActivitiesTemplate = require('../templates/activity-listing.handlebars
 const store = require('../store')
 
 const onSignUpSuccess = responseData => {
-  console.log('success', responseData)
+  // console.log('success', responseData)
   $('#create-activity-message').text('Signed up successfully!')
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('success')
@@ -119,7 +119,7 @@ const onSignOutFailure = () => {
 
 const onGetActivitiesSuccess = responseData => {
   $('#create-activity-message').html('Success!')
-  console.log(responseData.activities)
+  // console.log(responseData.activities)
   const showActivitiesHtml = showActivitiesTemplate({ activities: responseData.activities })
   $('.content').html(showActivitiesHtml)
   $('#update-activity-form').removeClass('hide')
