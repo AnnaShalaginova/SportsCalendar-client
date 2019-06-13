@@ -77,8 +77,9 @@ const onDeleteActivity = (event) => {
   const id = $(event.target).data('id')
   event.preventDefault()
   api.deleteActivity(id)
-    .then(function (responseData) {
-      onGetActivities(event)
+    .then(() => {
+      api.getActivities()
+        .then(ui.onDeleteActivitySuccess)
     })
     .catch(ui.failure)
 }

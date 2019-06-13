@@ -65,7 +65,6 @@ const onSignInFailure = responseData => {
 
 const onChangePasswordSuccess = () => {
   $('#create-activity-message').html('Password Changed Successfully!')
-  $('#change-password').hide()
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('success')
   $('form').trigger('reset')
@@ -143,8 +142,10 @@ const onUpdateActivitySuccess = responseData => {
   $('.content').html(showActivitiesHtml)
 }
 
-const onDeleteActivitySuccess = function () {
-  $('#create-activity-message').html('Success!')
+const onDeleteActivitySuccess = function (responseData) {
+  const showActivitiesHtml = showActivitiesTemplate({ activities: responseData.activities })
+  $('.content').html(showActivitiesHtml)
+  $('#create-activity-message').html('Activity deleted')
 
   $('#create-activity-message').addClass('success')
   setTimeout(() => {
