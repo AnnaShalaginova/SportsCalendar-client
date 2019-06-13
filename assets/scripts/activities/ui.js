@@ -102,6 +102,7 @@ const onSignOutSuccess = () => {
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('success')
   $('#change-password').hide()
+  $('#create-activity').hide()
   $('#sign-in').show()
   $('#sign-up').show()
   $('#get-activities').hide()
