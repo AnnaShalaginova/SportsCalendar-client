@@ -68,6 +68,10 @@ const onChangePasswordSuccess = () => {
   $('#create-activity-message').removeClass()
   $('#create-activity-message').addClass('success')
   $('form').trigger('reset')
+  setTimeout(() => {
+    $('#create-activity-message').html('')
+    $('#create-activity-message').removeClass('success')
+  }, 5000)
 }
 
 const onChangePasswordFailure = () => {
