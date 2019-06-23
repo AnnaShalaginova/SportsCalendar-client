@@ -2,7 +2,7 @@
   <section data-id="{{activity.id}}">
 
       <h3>Sport: {{limit activity.sport 15}}</h3>
-      <h3>Date: {{limit activity.date 15}}</h3>
+      <h3>Date: {{ activity.date }}</h3>
       <h3>Location: {{limit activity.location 15}}</h3>
 
     <button class='btn btn-danger delete-activity' data-id="{{activity.id}}">Delete</button>
