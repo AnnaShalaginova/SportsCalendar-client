@@ -1,5 +1,5 @@
 GITHUB LINK TO BACK END
-https://github.com/Annabelle130/full-stack-api
+https://github.com/annashalaginova/full-stack-api
 
 PURPOSE
 
