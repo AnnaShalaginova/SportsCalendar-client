@@ -87,6 +87,7 @@ const onCreateActivitySuccess = function (responseData) {
   // add success message to content
   $('#create-activity-message').html('Sports activity has been created!')
   $('#create-activity-message').addClass('success')
+  $('#getActivitiesButton').show()
 
   // use setTimeout to allow the success message to stay for 5 seconds before
   // the message is replaced with '' and the 'success' class is removed
