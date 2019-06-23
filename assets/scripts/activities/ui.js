@@ -110,8 +110,9 @@ const onSignOutSuccess = () => {
   $('#sign-in').show()
   $('#sign-up').show()
   $('#get-activities').hide()
+  $('.btn-danger').hide()
+
   $('form').trigger('reset')
-  $('#game-board').hide()
 }
 
 const onSignOutFailure = () => {

@@ -1,4 +1,5 @@
 {{#each activities as |activity|}}
+
   <section data-id="{{activity.id}}">
 
       <h3>Sport: {{limit activity.sport 15}}</h3>
@@ -6,7 +7,7 @@
       <h3>Location: {{limit activity.location 15}}</h3>
 
     <button class='btn btn-danger delete-activity' data-id="{{activity.id}}">Delete</button>
-    <div class='update-activity'>
+  <div class='update-activity'>
     <button class='btn btn-danger update-activity' data-id="{{activity.id}}">Update</button>
 
 
@@ -20,6 +21,8 @@
       <input type="submit" value="Update Activity">
     </form>
   </div>
+
+
     <!-- {{> partial}} -->
   </section>
 
