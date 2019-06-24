@@ -10,6 +10,8 @@ The target audience is active people looking to stay organized with their sports
 1. The app authenticates the user: sign up, sign in, sign out, change password.
 2. The app allows users to create, view, update and delete scheduled sports activities.
 
+NOTE: A user can only view his/her activities after creating a new activity. 
+
 LINK TO INITIAL WIREFRAME
 
 https://bit.ly/2HVDx4m
