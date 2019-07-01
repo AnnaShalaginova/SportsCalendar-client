@@ -45,3 +45,11 @@ PLANNING AND PROBLEM SOLVING
 For this project my planning involved the simplication of an initial idea, since a social media app is difficult in to implement for a beginner developer in the given timeframe. Planning also involved breaking down bigger tasks such as CRUD on the back and front end into smaller components.
 
 My problem solving approach for this project involved troubleshooting errors appearing in the terminal and browser console as they arise by reviewing and restructuring existing code, looking at past examples, as well as troubleshooting with instructors and fellow developers.
+
+GOALS FOR FUTURE ITERATIONS 
+
+1. Putting a flexbox for handlebars to make it into a grid
+2. Changing opacity of the box upon completing an activity 
+3. Adding a due date to completing activities 
+4. Displaying popular bucket list from other users 
+5. Adding a blog component about completing bucket list activities
